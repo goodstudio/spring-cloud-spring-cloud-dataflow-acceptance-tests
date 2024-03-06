@@ -93,12 +93,12 @@ jobs:
       - name: Setup Environment ${{ inputs.binder }}-${{ inputs.cf_index }}
         env:
           # DEBUG: true
-          SCHEDULER: ${{ inputs.scheduler }}
+          SCHEDULES_ENABLED: ${{ inputs.scheduler }}
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: scdf-scheduler
+          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
@@ -131,12 +131,11 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
-          SCHEDULER: ${{ inputs.scheduler }}
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: scdf-scheduler
+          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
@@ -208,12 +207,11 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
-          SCHEDULER: ${{ inputs.scheduler }}
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: scdf-scheduler
+          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
