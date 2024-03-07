@@ -74,7 +74,7 @@ def setup(args):
             key_name = installation.config_props.service_key_name
             logger.error("*** PRE create_service_key(%s, %s)" % (service_name, key_name))
             service_key = cf.create_service_key(service_name, key_name)
-            logger.error("*** POST create_service_key(%s, %s) -> %s" % (service_name, key_name, service_key))
+            logger.error("*** POST create_service_key(%s, %s)" % (service_name, key_name))
             installation.deployer_config.scheduler_url = service_key['api_endpoint']
             cf.delete_service_key(service_key, key_name)
 
