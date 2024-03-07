@@ -83,7 +83,7 @@ class ServiceConfig(EnvironmentAware):
 
     @classmethod
     def scheduler_default(cls):
-        return ServiceConfig(name="scdf-scheduler", service="scheduler-for-pcf", plan="standard")
+        return ServiceConfig(name="scheduler", service="scheduler-for-pcf", plan="standard")
 
     @classmethod
     def dataflow_default(cls):
