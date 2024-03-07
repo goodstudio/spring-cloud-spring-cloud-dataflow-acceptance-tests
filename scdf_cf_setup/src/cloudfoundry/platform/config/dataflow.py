@@ -29,6 +29,7 @@ class DataflowConfig(EnvironmentAware):
     @classmethod
     def from_env_vars(cls, env=os.environ):
         env = cls.env_vars(env, cls.prefix)
+        logger.info("**** ENV %s" % env)
         kwargs = cls.set_if_present(env, DataflowConfig().__dict__, {
             'streams_enabled': lambda x: x.lower() in ['true', 'y', 'yes'],
             'tasks_enabled': lambda x: x.lower() in ['true', 'y', 'yes'],
@@ -40,7 +41,7 @@ class DataflowConfig(EnvironmentAware):
     def __init__(self,
                  streams_enabled=True,
                  tasks_enabled=True,
-                 schedules_enabled=False,
+                 schedules_enabled=True,
                  env={}):
         self.streams_enabled = streams_enabled
         self.tasks_enabled = tasks_enabled
