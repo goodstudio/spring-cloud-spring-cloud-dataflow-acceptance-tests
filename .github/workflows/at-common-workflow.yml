@@ -94,8 +94,6 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
-          CF_SERVICE_SCHEDULER: '{"scheduler":{"name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
-          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
@@ -132,8 +130,6 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
-          CF_SERVICE_SCHEDULER: '{"scheduler":{"name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
-          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
@@ -209,8 +205,6 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
-          CF_SERVICE_SCHEDULER: '{"scheduler":{"name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
-          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
