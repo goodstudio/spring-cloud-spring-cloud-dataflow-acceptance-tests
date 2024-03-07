@@ -38,7 +38,7 @@ class InstallationContext(EnvironmentAware):
         kafka_config = KafkaConfig.from_env_vars(env)
         services_config = CloudFoundryServicesConfig.from_env_vars(env)
         skipper_config = SkipperConfig.from_env_vars(env)
-        logger.info("**** ENV %s" % self.config_props.platform)
+        logger.info("**** ENV %s" % env)
         return InstallationContext(deployer_config=deployer_config,
                                    dataflow_config=dataflow_config,
                                    skipper_config=skipper_config,
