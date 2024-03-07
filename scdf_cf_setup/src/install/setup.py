@@ -78,7 +78,7 @@ def setup(args):
             installation.deployer_config.scheduler_url = service_key['api_endpoint']
             logger.warning("*** sk/api_endpoint %s" % installation.deployer_config.scheduler_url)
             logger.warning("*** About to DELETE")
-            cf.delete_service_key(service_name, key_name)
+            #cf.delete_service_key(service_name, key_name)
 
         if installation.config_props.platform == "tile":
             installation.services_config['dataflow'].config = tile.configure_dataflow_service(installation)
