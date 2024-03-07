@@ -62,7 +62,7 @@ class DataflowConfig(EnvironmentAware):
         env = self.env.copy()
         env.update({DataflowConfig.streams_enabled_key: self.streams_enabled,
                     DataflowConfig.tasks_enabled_key: self.tasks_enabled,
-                    DataflowConfig.schedules_enabled_key: self.schedules_enabled
+                    DataflowConfig.schedules_enabled_key: True
                     })
         env.update(self.kafka_binder_configuration)
         env.update(self.oracle_configuration)
