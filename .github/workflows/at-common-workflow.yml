@@ -94,11 +94,12 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
+          CF_SERVICE_SCHEDULER: '{"scheduler":{name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
+          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
@@ -131,11 +132,12 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
+          CF_SERVICE_SCHEDULER: '{"scheduler":{name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
+          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
@@ -207,11 +209,12 @@ jobs:
         env:
           # DEBUG: true
           SCHEDULES_ENABLED: ${{ inputs.scheduler }}
+          CF_SERVICE_SCHEDULER: '{"scheduler":{name":"ci-scheduler", "service":"p-scheduler","plan":"standard"}}'
+          SPRING_CLOUD_DATAFLOW_FEATURES_SCHEDULER_ENABLED: true
           BINDER: ${{ inputs.binder }}
           MAVEN_REPOS: '{"repo1":"https://repo.spring.io/snapshot"}'
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: ${{ inputs.binder }}
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: false
-          SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: p-scheduler
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: "https://api.sys.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: "apps.${{ inputs.cf_host }}.cf-app.com"
           SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: p-dataflow
