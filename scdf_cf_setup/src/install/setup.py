@@ -65,17 +65,16 @@ def setup(args):
         if installation.db_config:
             installation.datasources_config = init_db(installation.db_config, options.initialize_db)
 
-        # Schreduler applies to any platform
+        # Scheduler applies to any platform
         if installation.services_config.get('scheduler'):
             ensure_required_services(cf, dict(
                 filter(lambda entry: entry[0] == 'scheduler', installation.services_config.items())))
             logger.debug("getting scheduler_url from service_key")
             service_name = installation.services_config['scheduler'].name
             key_name = installation.config_props.service_key_name
+            logger.error("*** PRE create_service_key(%s, %s)" % service_name, key_name)
             service_key = cf.create_service_key(service_name, key_name)
-            logger.error("*** service_name: %s" % service_name)
-            logger.error("*** key_name: %s" % key_name)
-            logger.error("*** service_key: %s" % service_key)
+            logger.error("*** POST create_service_key(%s, %s) -> %s" % service_name, key_name, service_key)
             installation.deployer_config.scheduler_url = service_key['api_endpoint']
             cf.delete_service_key(service_key, key_name)
 
