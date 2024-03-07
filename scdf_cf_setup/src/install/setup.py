@@ -76,7 +76,7 @@ def setup(args):
             logger.error("*** service_name: %s" % service_name)
             logger.error("*** key_name: %s" % key_name)
             logger.error("*** service_key: %s" % service_key)
-            installation.deployer_config.scheduler_url = service_key['url']
+            installation.deployer_config.scheduler_url = service_key['api_endpoint']
             cf.delete_service_key(service_key, key_name)
 
         if installation.config_props.platform == "tile":
