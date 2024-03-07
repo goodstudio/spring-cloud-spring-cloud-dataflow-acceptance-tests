@@ -72,13 +72,13 @@ def setup(args):
             logger.debug("getting scheduler_url from service_key")
             service_name = installation.services_config['scheduler'].name
             key_name = installation.config_props.service_key_name
-            logger.error("*** PRE (%s, %s)" % (service_name, key_name))
+            logger.warning("*** PRE (%s, %s)" % (service_name, key_name))
             service_key = cf.create_service_key(service_name, key_name)
-            logger.error("*** POST (%s, %s)" % (service_name, key_name))
-            logger.warn("*** sk/api_endpoint %s" % installation.deployer_config.scheduler_url)
+            logger.warning("*** POST (%s, %s)" % (service_name, key_name))
             installation.deployer_config.scheduler_url = service_key['api_endpoint']
-            logger.warn("*** About to DELETE")
-            cf.delete_service_key(service_key, key_name)
+            logger.warning("*** sk/api_endpoint %s" % installation.deployer_config.scheduler_url)
+            logger.warning("*** About to DELETE")
+            cf.delete_service_key(service_name, key_name)
 
         if installation.config_props.platform == "tile":
             installation.services_config['dataflow'].config = tile.configure_dataflow_service(installation)
