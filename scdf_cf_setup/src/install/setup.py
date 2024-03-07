@@ -73,6 +73,9 @@ def setup(args):
             service_name = installation.services_config['scheduler'].name
             key_name = installation.config_props.service_key_name
             service_key = cf.create_service_key(service_name, key_name)
+            logger.error("*** service_name: %s" % service_name)
+            logger.error("*** key_name: %s" % key_name)
+            logger.error("*** service_key: %s" % service_key)
             installation.deployer_config.scheduler_url = service_key['url']
             cf.delete_service_key(service_key, key_name)
 
